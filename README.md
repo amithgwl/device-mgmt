@@ -14,7 +14,7 @@ To run json server use below command
 
 Can be verified by navigating to url: http://localhost:3000/
 
-#Note: database.json is a file which is maintained locall in project repository.
+#Note: database.json is a file which is maintained locally in project repository.
 
 
 # Running Application local environment
