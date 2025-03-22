@@ -3,8 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
-import {DatePipe} from '@angular/common';
+import {CommonModule, DatePipe, NgClass} from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+
 
 export interface Section {
   name: string;
@@ -14,7 +16,7 @@ export interface Section {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatListModule, MatIconModule, MatDividerModule, DatePipe, MatToolbarModule],
+  imports: [RouterOutlet, MatListModule, MatIconModule, MatDividerModule, DatePipe, MatToolbarModule, MatCardModule, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,17 +24,17 @@ export class AppComponent {
   title = 'device-mgmt';
   devices: Section[] = [
     {
-      name: 'Photos',
+      name: 'Device 1',
       updated: new Date('1/1/16'),
       status: true
     },
     {
-      name: 'Recipes',
+      name: 'Device 2',
       updated: new Date('1/17/16'),
       status: false
     },
     {
-      name: 'Work',
+      name: 'Device 3',
       updated: new Date('1/28/16'),
       status: true
     },
