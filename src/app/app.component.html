@@ -4,22 +4,27 @@
   <span style="margin-left: 5px;">Device Management</span>
 </mat-toolbar>
 
-
 <mat-card class="example-card" appearance="outlined" style="margin: 15px;">
   <mat-card-header>
     <mat-card-title>Devices</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <mat-list>
-      @for (device of devices; track device) {
-      <mat-list-item>
-        <mat-icon matListItemIcon [ngClass]="{'greenClass': device.status, 'redClass': !device.status}">devices</mat-icon>
-        <div matListItemTitle>{{device.name}}</div>
-        <div matListItemLine>{{device.updated | date}}</div>
-    
-      </mat-list-item>
-      }
-    </mat-list>
+    <mat-grid-list cols="4" rowHeight="2:2">
+      <mat-grid-tile>
+        <mat-list>
+          @for (device of devices; track device) {
+          <mat-list-item (click)="onSelect(device)" [activated]="device === selectedDevice">
+            <mat-icon matListItemIcon
+              [ngClass]="{'greenClass': device.status, 'redClass': !device.status}">devices</mat-icon>
+            <div matListItemTitle>{{device.name}}</div>
+            <div matListItemLine>{{device.updated | date}}</div>
+          </mat-list-item>
+          }
+        </mat-list>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        {{selectedDevice | json}}
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-card-content>
 </mat-card>
-
