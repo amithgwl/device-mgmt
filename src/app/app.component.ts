@@ -17,6 +17,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DeviceDetailedViewComponent } from '../app/device-detailed-view/device-detailed-view.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataServiceService } from './data-service.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 export interface Section {
   id: Number,
@@ -27,47 +30,58 @@ export interface Section {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatListModule, MatIconModule, MatDividerModule, DatePipe, MatToolbarModule, MatCardModule, NgClass, JsonPipe, MatButtonModule, MatSidenavModule, MatGridListModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, NgIf, MatDatepickerModule, DeviceDetailedViewComponent, MatProgressSpinnerModule ],
+  imports: [RouterOutlet, MatListModule, MatIconModule, MatDividerModule, DatePipe, MatToolbarModule, MatCardModule, NgClass, JsonPipe, MatButtonModule, MatSidenavModule, MatGridListModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, NgIf, MatDatepickerModule, DeviceDetailedViewComponent, MatProgressSpinnerModule, HttpClientModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
+  constructor(private dataServiceService: DataServiceService) {
+
+  }
   title = 'device-mgmt';
   private _snackBar = inject(MatSnackBar);
 
   showSpinner = false;
   showFiller = false;
-  devices: Section[] = [
-    {
-      id: 1,
-      name: 'Device 1',
-      updated: new Date('1/1/16'),
-      status: true
-    },
-    {
-      id: 2,
-      name: 'Device 2',
-      updated: new Date('1/17/16'),
-      status: false
-    },
-    {
-      id: 3,
-      name: 'Device 3',
-      updated: new Date('1/28/16'),
-      status: true
-    },
-    {
-      id: 4,
-      name: 'Device 4',
-      updated: new Date('1/28/18'),
-      status: true
-    },
-  ];
+  devices: any = [];
+  // Section[] = [
+  //   {
+  //     id: 1,
+  //     name: 'Device 1',
+  //     updated: new Date('1/1/16'),
+  //     status: true
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Device 2',
+  //     updated: new Date('1/17/16'),
+  //     status: false
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Device 3',
+  //     updated: new Date('1/28/16'),
+  //     status: true
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Device 4',
+  //     updated: new Date('1/28/18'),
+  //     status: true
+  //   },
+  // ];
 
   selectedDevice?: any;
 
 ngOnInit() {
-
+  this.dataServiceService.getData().subscribe({
+    next: (response) => {
+      this.devices = response;
+    },
+    error: (error) => {
+      console.error('Error fetching data:', error);
+    }
+  });
 }
 
   onSelect(device: any): void {

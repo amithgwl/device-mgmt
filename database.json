@@ -34,25 +34,25 @@
         {
           "id": 1,
           "name": "Device 1",
-          "updated": "new Date('1/1/16')",
+          "updated": "1/1/16",
           "status": true
         },
         {
           "id": 2,
           "name": "Device 2",
-          "updated": "new Date('1/17/16')",
+          "updated": "1/17/16",
           "status": false
         },
         {
           "id": 3,
           "name": "Device 3",
-          "updated": "new Date('1/28/16')",
+          "updated": "1/28/16",
           "status": true
         },
         {
           "id": 4,
           "name": "Device 4",
-          "updated": "new Date('1/28/18')",
+          "updated": "1/28/18",
           "status": true
         }
       ]

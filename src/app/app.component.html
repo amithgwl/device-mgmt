@@ -17,7 +17,7 @@
             <mat-icon matListItemIcon
               [ngClass]="{'greenClass': device?.status, 'redClass': !device?.status}">devices</mat-icon>
             <div matListItemTitle>{{device?.name}}</div>
-            <div matListItemLine>{{device?.updated | date}}</div>
+            <div matListItemLine>{{device?.updated}}</div>
           </mat-list-item>
           }
         </mat-list>
