@@ -3,8 +3,8 @@ Angular version: 19
 
 Node Version: 20.17.0
 
-# Mocking backend Api using json-server (`https://www.npmjs.com/package/json-server`)
-To install json-server use below command
+# Mocking backend Api using json-server
+To install json-server (`https://www.npmjs.com/package/json-server`) use below command
 
   `npm install -g json-server`
 
