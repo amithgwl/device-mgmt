@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
@@ -31,7 +31,7 @@ export interface Section {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'device-mgmt';
   private _snackBar = inject(MatSnackBar);
 
@@ -66,7 +66,9 @@ export class AppComponent {
 
   selectedDevice?: any;
 
+ngOnInit() {
 
+}
 
   onSelect(device: any): void {
     this.selectedDevice = device;

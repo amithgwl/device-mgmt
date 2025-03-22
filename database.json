@@ -1,0 +1,60 @@
+{
+    "product": "Live JSON generator",
+    "version": 3.1,
+    "releaseDate": "2014-06-25T00:00:00.000Z",
+    "demo": true,
+    "person": {
+      "id": 12345,
+      "name": "John Doe",
+      "phones": {
+        "home": "800-123-4567",
+        "mobile": "877-123-1234"
+      },
+      "email": [
+        "jd@example.com",
+        "jd@example.org"
+      ],
+      "dateOfBirth": "1980-01-02T00:00:00.000Z",
+      "registered": true,
+      "emergencyContacts": [
+        {
+          "name": "Jane Doe",
+          "phone": "888-555-1212",
+          "relationship": "spouse"
+        },
+        {
+          "name": "Justin Doe",
+          "phone": "877-123-1212",
+          "relationship": "parent"
+        }
+      ]
+    },
+    "devices": 
+      [
+        {
+          "id": 1,
+          "name": "Device 1",
+          "updated": "new Date('1/1/16')",
+          "status": true
+        },
+        {
+          "id": 2,
+          "name": "Device 2",
+          "updated": "new Date('1/17/16')",
+          "status": false
+        },
+        {
+          "id": 3,
+          "name": "Device 3",
+          "updated": "new Date('1/28/16')",
+          "status": true
+        },
+        {
+          "id": 4,
+          "name": "Device 4",
+          "updated": "new Date('1/28/18')",
+          "status": true
+        }
+      ]
+    
+  }
