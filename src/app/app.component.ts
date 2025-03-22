@@ -13,6 +13,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 export interface Section {
   id: Number,
@@ -23,7 +24,7 @@ export interface Section {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatListModule, MatIconModule, MatDividerModule, DatePipe, MatToolbarModule, MatCardModule, NgClass, JsonPipe, MatButtonModule, MatSidenavModule, MatGridListModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, NgIf],
+  imports: [RouterOutlet, MatListModule, MatIconModule, MatDividerModule, DatePipe, MatToolbarModule, MatCardModule, NgClass, JsonPipe, MatButtonModule, MatSidenavModule, MatGridListModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, NgIf, MatDatepickerModule, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
